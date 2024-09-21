@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import './components';
 
+:root {
+  font-family: BRSonoma, sans-serif;
+}
+
 .logo {
   @apply h-36 p-6 transition-[filter] duration-300
   hover:drop-shadow-[0_0_32px_#646cffaa] hover:will-change-[filter];

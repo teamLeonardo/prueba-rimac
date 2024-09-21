@@ -2,6 +2,7 @@ import React from 'react'
 // Form.js
 // import { useState } from 'react';
 import imgFam from '@/assets/Frame 1000004298.png'
+import { GroupInput } from './components/molecules'
 export const Form = () => {
   // const [idType, setIdType] = useState('DNI');
   // const [idNumber, setIdNumber] = useState('');
@@ -10,8 +11,8 @@ export const Form = () => {
   // const [commercialComm, setCommercialComm] = useState(false);
 
   return (
-    <form className="space-y-4">
-      <div className="flex space-x-4">
+    <form className="w-full space-y-4">
+      <div className="flex w-full space-x-4">
         {/* <Select value={idType} onValueChange={setIdType}>
           <SelectTrigger className="w-1/3">
             <SelectValue placeholder="Tipo de documento" />
@@ -22,46 +23,35 @@ export const Form = () => {
             <SelectItem value="Pasaporte">Pasaporte</SelectItem>
           </SelectContent>
         </Select> */}
+        <GroupInput />
+      </div>
+      <div className="flex h-[56px] w-full space-x-4">
         <input
           type="text"
-          placeholder="Nro. de documento"
+          placeholder="Celular"
           // value={idNumber}
           // onChange={(e) => setIdNumber(e.target.value)}
-          className="w-2/3"
+          className="input-bordered input join-item h-full  w-full"
         />
       </div>
-      <input
-        type="tel"
-        placeholder="Celular"
-        // value={phoneNumber}
-        // onChange={(e) => setPhoneNumber(e.target.value)}
-      />
       <div className="space-y-2">
-        <div className="flex items-center space-x-2">
-          <input
-            type="checkbox"
-            id="privacy"
-            // defaultChecked={privacyPolicy}
-            // onChange={setPrivacyPolicy}
-          />
-          <label htmlFor="privacy" className="text-sm">
-            Acepto la Política de Privacidad
+        <div className="form-control grid grid-cols-[auto_1fr] items-center gap-4">
+          <input type="checkbox" id="$check-private" defaultChecked className="checkbox" />
+          <label htmlFor="$check-private" className="label cursor-pointer">
+            <span className="label-text text-start">Acepto la Política de Privacidad</span>
           </label>
         </div>
-        <div className="flex items-center space-x-2">
-          <input
-            type="checkbox"
-            id="commercial"
-            // defaultChecked={commercialComm}
-            // onCheckedChange={setCommercialComm}
-          />
-          <label htmlFor="commercial" className="text-sm">
-            Acepto la Política Comunicaciones Comerciales
+        <div className="form-control grid grid-cols-[auto_1fr] items-center gap-4">
+          <input type="checkbox" id="$check-politic" defaultChecked className="checkbox" />
+          <label htmlFor="$check-politic" className="label cursor-pointer">
+            <span className="label-text text-start">
+              Acepto la Política Comunicaciones Comerciales
+            </span>
           </label>
         </div>
       </div>
       <p className="text-sm">
-        <a href="#" className="underline">
+        <a href="#" className="font-blod underline">
           Aplican Términos y Condiciones.
         </a>
       </p>
@@ -90,28 +80,25 @@ const Footer = () => (
 
 const MainContent = () => (
   <main className="relative min-h-screen flex-grow p-8">
-    <div className="mx-auto flex max-w-6xl flex-col items-center md:flex-row">
-      <div className="mb-8 md:mb-0 md:w-1/2 ">
+    <div className="mx-auto  grid max-w-6xl grid-cols-2 items-center md:flex-row">
+      <div className="mb-8 md:mb-0 ">
         <img
           src={imgFam}
           alt="Happy family"
-          width={500}
-          height={300}
+          width={480}
+          height={560}
           className="relative z-10 rounded-lg shadow-lg"
         />
       </div>
-      <div className="md:w-1/2 md:pl-12">
-        <div>
-          <div className="badge badge-lg bg-gradient-to-r from-[#00F4E2] to-[#00FF7F]">
-            Seguro Salud Flexible
-          </div>
-          <h1 className="mb-4 text-4xl font-bold">Creado para ti y tu familia</h1>
-          <p className="mb-6">
-            Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra asesoría. 100%
-            online.
-          </p>
-          <Form />
+      <div className="self-baseline md:mr-[9rem] md:pl-12">
+        <div className="badge badge-lg rounded-md bg-gradient-to-r from-[#00F4E2] to-[#00FF7F] font-bold">
+          Seguro Salud Flexible
         </div>
+        <h1 className="mb-4 mt-4 text-4xl font-bold">Creado para ti y tu familia</h1>
+        <p className="mb-6 font-bold">
+          Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra asesoría. 100% online.
+        </p>
+        <Form />
       </div>
     </div>
   </main>
