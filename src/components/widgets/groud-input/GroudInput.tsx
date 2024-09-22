@@ -3,7 +3,7 @@ import React from 'react'
 const GroupInput = () => {
   return (
     <div className="join grid h-[56px] w-full grid-cols-[40%,1fr]">
-      <select className="join-item select-bordered select h-full">
+      <select className="select-bordered select join-item h-full">
         <option disabled selected>
           Filter
         </option>
@@ -16,7 +16,7 @@ const GroupInput = () => {
         placeholder="Nro. de documento"
         // value={idNumber}
         // onChange={(e) => setIdNumber(e.target.value)}
-        className="input-bordered join-item  input  h-full"
+        className="input-bordered input join-item h-full w-full"
       />
     </div>
   )
