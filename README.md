@@ -1,50 +1,68 @@
-# vite-react-template ✏️
+## Arquitectura del Proyecto
 
-A vite template for creating a React App with typescript, tailwindcss, scss, eslint, prettier, vitest, husky and lint-staged.
+La arquitectura de la **Prueba Rimac** está diseñada para cumplir con los requisitos del proyecto, asegurando un desarrollo limpio, escalable y eficiente. A continuación, se detallan los aspectos clave de la arquitectura:
 
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/12731790/234902079-70cad825-731e-449d-b0f3-c5af03d0040e.png">
+### Estructura del Proyecto
 
-## Features 🎸
+La estructura del proyecto sigue un enfoque modular y limpio, organizado en los siguientes directorios:
 
-- [x] React.js as basic framework
-- [x] tailwindcss + scss for style
-- [x] prettier + eslint for code style
-- [x] vitest for unit test and component test
-- [x] husky + lint-staged for pre-commit hook
+- **src/**: Contiene el código fuente de la aplicación.
+  - **components/**: Agrupa los componentes reutilizables de la aplicación, con una organización que sigue la metodología BEM para una mejor mantenibilidad:
+    - **elements/**: Elementos básicos (ej. logos, botones).
+    - **layouts/**: Estructuras de página que definen el diseño general.
+    - **modules/**: Componentes específicos que implementan funcionalidades clave (ej. encabezados, pies de página, formularios).
+    - **widgets/**: Componentes más complejos que encapsulan lógica y presentación.
+  - **pages/**: Componentes que representan diferentes páginas de la aplicación.
+  - **shared/**: Recursos y utilidades compartidos, incluyendo estilos, hooks personalizados y tipos TypeScript.
+    - **assets/**: Fuentes e imágenes utilizadas globalmente.
+    - **hooks/**: Hooks personalizados para el manejo de lógica compartida.
+    - **style/**: Archivos SCSS y Tailwind CSS globales.
+    - **types/**: Definiciones TypeScript para tipado estricto.
+    - **utils/**: Funciones utilitarias, como cálculos y helpers.
+  - **module/**: Agrupación de lógica relacionada con los planes y los usuarios, que incluye los stores y tipos necesarios para la gestión de datos.
 
-## Try it now 🚀
+### Dependencias
 
-### GitHub template
+El proyecto incluye varias dependencias que facilitan su desarrollo y mantenimiento:
+- **React y Redux**: Para la creación de componentes y la gestión del estado.
+- **React Router**: Para la navegación entre páginas.
+- **Tailwind CSS + scss**: Para un estilo rápido y responsivo (opcional).
+- **Vitest**: Para la implementación de pruebas unitarias.
 
-[Use this template to create a new repo](https://github.com/zadzbw/vite-react-template/generate).
+### Scripts
 
-### Clone to local
+El archivo `package.json` incluye diversos scripts que facilitan el desarrollo:
+- **dev**: Inicia el servidor de desarrollo.
+  ```bash
+    pnpm run dev
+  ```
+- **build**: Compila la aplicación para producción.
+  ```bash
+    pnpm run build
+  ```
+- **test**: Ejecuta las pruebas unitarias.
+  ```bash
+    pnpm run test
+  ```
+- **lint**: Verifica el código con ESLint para mantener su calidad.
+  ```bash
+    pnpm run lint
+  ```
+- **format**: Formatea el código con Prettier y ESLint.
+  ```bash
+    pnpm run format:check
+  ```
 
-If you prefer to do it manually with the cleaner git history, you can do the following:
+### Consumo de APIs
 
-1. download the template
+El proyecto maneja adecuadamente el consumo de APIs, asegurando una integración fluida de datos y funcionalidades. La validación de formularios se implementa utilizando `react-hook-form` para una gestión eficiente de los datos de entrada.
 
-```bash
-npx degit zadzbw/vite-react-template my-app
-```
+### Código Limpio y Performance
 
-2. push to your own repo
+Se aplica la filosofía de **Clean Code** a lo largo del desarrollo, asegurando que el código sea legible y fácil de mantener. Además, se implementan prácticas de optimización para garantizar un buen rendimiento de la aplicación.
 
-```bash
-cd my-app
+### Manejo de Git y Github
 
-git init
-git add .
-git commit -m "commit message"
-git remote add origin https://github.com/username/repositoryname.git
-git push -u origin main
-```
+Se mantiene un manejo adecuado de Git y GitHub, facilitando la colaboración y el control de versiones del proyecto.
 
-3. install dependencies
-
-```bash
-npm install pnpm --global
-pnpm install --frozen-lockfile
-```
-
-and then you can start develop your React App.
+Con esta arquitectura modular y el uso de tecnologías modernas, la **Prueba Rimac** está diseñada para ser fácilmente extensible y mantenible, adaptándose a futuras necesidades y requisitos.

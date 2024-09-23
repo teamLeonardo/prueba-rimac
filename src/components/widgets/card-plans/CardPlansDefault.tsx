@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Plans } from '@/module/plans/types/responsePlans'
 
 const CardPlansDefault = ({ iconHome, data }: { iconHome: any; data: Plans }) => {
   const { name, price, description } = data
+  const navigate = useNavigate()
   return (
     <div className="card relative grid h-[687px] w-[288px] grid-rows-[auto,auto,1fr] border border-[#cccccc40] bg-base-100 p-[68px_32px_48px_32px] shadow-2xl">
       <div className="grid grid-cols-[1fr,auto] gap-2">
@@ -29,7 +31,12 @@ const CardPlansDefault = ({ iconHome, data }: { iconHome: any; data: Plans }) =>
           </ul>
         </div>
         <div className="absolute bottom-0 right-0 flex w-full justify-end">
-          <button className="btn-primary btn-circle btn w-full">Seleccionar Plan</button>
+          <button
+            className="btn-primary btn-circle btn w-full"
+            onClick={() => navigate('/plans/resume', { state: data })}
+          >
+            Seleccionar Plan
+          </button>
         </div>
       </div>
     </div>

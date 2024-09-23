@@ -54,7 +54,7 @@ module.exports = {
 
           'info-content': '#c6dbff',
 
-          success: '#00ff00',
+          success: '#389E0D',
 
           'success-content': '#001600',
 

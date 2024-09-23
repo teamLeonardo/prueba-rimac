@@ -1,8 +1,8 @@
 import React from 'react'
 
-import FormHome from '@/components/modules/FormHome'
-import imgFam from '@/shared/assets/Frame 1000004298.png'
+import imgFam from '@/shared/assets/Frame 1000004298.webp'
 
+const FormHome = React.lazy(() => import('@/components/modules/FormHome'))
 const HomePage = () => (
   <>
     <div className="absolute left-0  top-0 z-0 h-screen w-[500px] -translate-x-[50%] ">

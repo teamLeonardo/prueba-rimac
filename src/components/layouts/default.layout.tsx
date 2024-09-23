@@ -6,9 +6,9 @@ import { Header } from '../modules/Header'
 
 const DefaultLayout = () => {
   return (
-    <div className="relative flex max-h-screen flex-col overflow-y-auto overflow-x-hidden">
+    <div className="relative h-screen overflow-y-auto overflow-x-hidden">
       <Header />
-      <main className="relative min-h-screen">
+      <main className="relative h-auto min-h-screen">
         <Outlet />
       </main>
       <Footer />
