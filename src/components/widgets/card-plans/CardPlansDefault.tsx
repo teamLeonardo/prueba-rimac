@@ -1,12 +1,21 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Plans } from '@/module/plans/types/responsePlans'
+import { IUser } from '@/module/users/types/responseUser'
 
-const CardPlansDefault = ({ iconHome, data }: { iconHome: any; data: Plans }) => {
+const CardPlansDefault = ({
+  iconHome,
+  data,
+  userData,
+}: {
+  iconHome: any
+  data: Plans
+  userData: IUser
+}) => {
   const { name, price, description } = data
   const navigate = useNavigate()
   return (
-    <div className="card relative grid h-[687px] w-[288px] grid-rows-[auto,auto,1fr] border border-[#cccccc40] bg-base-100 p-[68px_32px_48px_32px] shadow-2xl">
+    <div className="card relative grid h-[687px] w-full grid-rows-[auto,auto,1fr] border border-[#cccccc40] bg-base-100 p-[68px_32px_48px_32px] shadow-2xl md:w-[288px]">
       <div className="grid grid-cols-[1fr,auto] gap-2">
         <div className="grid ">
           <h2 className="text-2xl font-[700] text-[#141938]">{name}</h2>
@@ -33,7 +42,7 @@ const CardPlansDefault = ({ iconHome, data }: { iconHome: any; data: Plans }) =>
         <div className="absolute bottom-0 right-0 flex w-full justify-end">
           <button
             className="btn-primary btn-circle btn w-full"
-            onClick={() => navigate('/plans/resume', { state: data })}
+            onClick={() => navigate('/plans/resume', { state: { plan: data, user: userData } })}
           >
             Seleccionar Plan
           </button>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 const BackSeccion = () => {
   const navigate = useNavigate()
   return (
-    <div className="mx-auto w-8/12">
+    <div className="mx-auto hidden w-8/12 md:block">
       <div
         className="flex w-fit cursor-pointer items-center gap-2 rounded-md border-2 border-solid border-white p-2 hover:border-2 hover:border-[#4F4FFF]"
         onClick={() => {

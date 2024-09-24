@@ -2,6 +2,7 @@ import React, { Suspense } from 'react'
 import { useSelector } from 'react-redux'
 import LoaderListPlans from '@/components/modules/LoaderListPlans'
 import { selectIsOpenPlans } from '@/module/plans/store/slicePlans'
+import { RootState } from '@/store/store'
 
 const PlansList = React.lazy(() => import('@/components/modules/ListPlans'))
 const ListCardSelect = React.lazy(() => import('@/components/modules/ListCardSelect'))
@@ -9,15 +10,15 @@ const ListCardSelect = React.lazy(() => import('@/components/modules/ListCardSel
 const PlansPage = () => {
   // No necesitas envolver useSelector con startTransition
   const isOpen = useSelector(selectIsOpenPlans)
-
+  const user = useSelector((state: RootState) => state.userState.user)
   return (
     <>
-      <div className="mx-auto grid w-[544px] gap-4">
+      <div className="mx-auto grid w-full gap-4 md:w-[544px]">
         <div className="mx-auto grid w-full gap-4">
-          <h1 className="text-center text-5xl text-[40px] font-bold">
-            Rocío ¿Para quién deseas cotizar?
+          <h1 className="text-center text-[40px] text-xl font-bold md:text-5xl">
+            {user?.name} ¿Para quién deseas cotizar?
           </h1>
-          <p className="text-center text-base">
+          <p className="mx-4 text-center text-sm md:text-base">
             Selecciona la opción que se ajuste más a tus necesidades.
           </p>
         </div>
@@ -25,7 +26,7 @@ const PlansPage = () => {
         <ListCardSelect />
       </div>
       {isOpen && (
-        <div className="mx-auto w-8/12">
+        <div className="mx-auto w-11/12 md:w-8/12 ">
           <Suspense fallback={<LoaderListPlans />}>
             <PlansList />
           </Suspense>

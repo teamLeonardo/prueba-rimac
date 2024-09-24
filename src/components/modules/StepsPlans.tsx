@@ -7,7 +7,7 @@ const StepsPlans = ({ step = 1 }: { step: number }) => {
   }
 
   return (
-    <div className="flex w-full justify-center bg-[#F0F4FF] py-4">
+    <div className="hidden w-full justify-center bg-[#F0F4FF] py-4 md:flex">
       <StepsInput data={dataSteps} step={step} />
     </div>
   )

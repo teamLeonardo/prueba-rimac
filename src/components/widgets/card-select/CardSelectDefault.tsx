@@ -26,7 +26,7 @@ const CardSelectDefault: React.FC<CardSelectDefaultProps> = ({
     <div
       onClick={handleCardClick}
       className={classNames(
-        'card relative grid h-[212px] w-[256px] cursor-pointer border bg-base-100 shadow-xl',
+        'card relative grid h-[212px] w-[90%] cursor-pointer border bg-base-100 shadow-xl md:w-[256px]',
         {
           'border-[3px] border-[#03050F]': isSelected,
           'border border-[#cccccc40]': !isSelected,
@@ -35,7 +35,19 @@ const CardSelectDefault: React.FC<CardSelectDefaultProps> = ({
     >
       <div className="absolute right-4 top-4">
         <div className="relative h-auto w-auto">
-          <input type="radio" name={name} className="radio-success radio" checked={isSelected} />
+          <label>
+            <input
+              type="radio"
+              value={name}
+              name={name}
+              className="radio-success radio"
+              checked={isSelected}
+              onChange={(e) => {
+                e.stopPropagation()
+                handleCardClick()
+              }}
+            />
+          </label>
           <div className="absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 text-[10px] text-white ">
             <svg
               width="1em" // Hereda el tamaño de fuente del padre
