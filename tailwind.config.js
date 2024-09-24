@@ -4,22 +4,6 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'media',
-  theme: {
-    extend: {
-      colors: {
-        /** light */
-        primary: colors.neutral['900'],
-        body: colors.white,
-        'button-bg': colors.neutral['100'],
-        /** dark */
-        dark: {
-          primary: colors.gray['50'],
-          body: colors.neutral['800'],
-          'button-bg': colors.neutral['900'],
-        },
-      },
-    },
-  },
 
   plugins: [require('daisyui')],
   daisyui: {
@@ -30,7 +14,7 @@ module.exports = {
 
           'primary-content': '#ffffff',
 
-          secondary: '#ff00ff',
+          secondary: '#432EFF',
 
           'secondary-content': '#160016',
 
@@ -48,7 +32,7 @@ module.exports = {
 
           'base-300': '#bebebe',
 
-          'base-content': '#161616',
+          'base-content': '#141938',
 
           info: '#0000ff',
 

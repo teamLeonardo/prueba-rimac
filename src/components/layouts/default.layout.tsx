@@ -8,7 +8,7 @@ const DefaultLayout = () => {
   return (
     <div className="relative h-screen overflow-y-auto overflow-x-hidden">
       <Header />
-      <main className="relative h-auto min-h-screen">
+      <main className="h-auto min-h-screen">
         <Outlet />
       </main>
       <Footer />
