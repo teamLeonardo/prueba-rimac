@@ -1,11 +1,7 @@
-## Arquitectura del Proyecto
+## Proyecto Prueba Rimac: Arquitectura y Librerías
 
-La arquitectura de la **Prueba Rimac** está diseñada para cumplir con los requisitos del proyecto, asegurando un desarrollo limpio, escalable y eficiente. A continuación, se detallan los aspectos clave de la arquitectura:
-
+La Prueba Rimac está diseñada para cumplir con requisitos de escalabilidad, mantenibilidad y eficiencia. Su estructura modular asegura una fácil expansión y mantenimiento a medida que se agreguen nuevas funcionalidades.
 ### Estructura del Proyecto
-
-La estructura del proyecto sigue un enfoque modular y limpio, organizado en los siguientes directorios:
-
 - **src/**: Contiene el código fuente de la aplicación.
   - **components/**: Agrupa los componentes reutilizables de la aplicación, con una organización que sigue la metodología BEM para una mejor mantenibilidad:
     - **elements/**: Elementos básicos (ej. logos, botones).
@@ -21,13 +17,15 @@ La estructura del proyecto sigue un enfoque modular y limpio, organizado en los 
     - **utils/**: Funciones utilitarias, como cálculos y helpers.
   - **module/**: Agrupación de lógica relacionada con los planes y los usuarios, que incluye los stores y tipos necesarios para la gestión de datos.
 
-### Dependencias
+### Decisiones Técnicas
 
 El proyecto incluye varias dependencias que facilitan su desarrollo y mantenimiento:
-- **React y Redux**: Para la creación de componentes y la gestión del estado.
-- **React Router**: Para la navegación entre páginas.
-- **Tailwind CSS + scss**: Para un estilo rápido y responsivo (opcional).
-- **Vitest**: Para la implementación de pruebas unitarias.
+
+- **React y Redux**: Seleccionadas por su facilidad de uso y extensibilidad, permitiendo manejar el estado de forma centralizada.
+- **React Router**: Permitió crear una navegación fluida entre las diferentes vistas de la aplicación, esencial para SPA.
+- **Tailwind CSS + scss**: Optamos por Tailwind por su rapidez en el diseño responsivo, lo que facilita la creación de interfaces modernas con menos código CSS.
+
+- **Vitest**: Elegido por su integración con Vite, lo que permitió ejecutar pruebas de manera ágil sin sacrificar velocidad ni funcionalidad.
 
 ### Scripts
 
@@ -53,16 +51,3 @@ El archivo `package.json` incluye diversos scripts que facilitan el desarrollo:
     pnpm run format:check
   ```
 
-### Consumo de APIs
-
-El proyecto maneja adecuadamente el consumo de APIs, asegurando una integración fluida de datos y funcionalidades. La validación de formularios se implementa utilizando `react-hook-form` para una gestión eficiente de los datos de entrada.
-
-### Código Limpio y Performance
-
-Se aplica la filosofía de **Clean Code** a lo largo del desarrollo, asegurando que el código sea legible y fácil de mantener. Además, se implementan prácticas de optimización para garantizar un buen rendimiento de la aplicación.
-
-### Manejo de Git y Github
-
-Se mantiene un manejo adecuado de Git y GitHub, facilitando la colaboración y el control de versiones del proyecto.
-
-Con esta arquitectura modular y el uso de tecnologías modernas, la **Prueba Rimac** está diseñada para ser fácilmente extensible y mantenible, adaptándose a futuras necesidades y requisitos.
